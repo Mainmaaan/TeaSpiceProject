@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tea & Spice – Menu</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Tea & <span>Spice Hub</span></div>
+    <div class="menu-toggle">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="stream.html">Stream</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+    <div class="clock" id="clock"></div>
+  </nav>
+
+  <section class="menu">
+    <h1 class="menu-title">Our Special Menu</h1>
+    <p class="menu-subtitle">Handpicked teas and exotic spices curated just for you</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="images/green-tea.jpg" alt="Green Tea">
+        <h3>Premium Green Tea</h3>
+        <p>Refreshing & healthy blend of organic green tea leaves.</p>
+        <button class="order-btn">Order Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/masala-tea.jpg" alt="Masala Tea">
+        <h3>Masala Chai</h3>
+        <p>Spicy and aromatic Indian masala tea to warm your soul.</p>
+        <button class="order-btn">Order Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/black-tea.jpg" alt="Black Tea">
+        <h3>Royal Black Tea</h3>
+        <p>Rich and bold black tea for an energizing kick.</p>
+        <button class="order-btn">Order Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/herbal-spice.jpg" alt="Herbal Spice Mix">
+        <h3>Herbal Spice Mix</h3>
+        <p>Exotic spices perfect for your wellness teas.</p>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggleBtn.addEventListener('click',()=>navLinks.classList.toggle('show'));
+
+    function updateClock(){const now=new Date();
+    document.getElementById('clock').innerText=now.toLocaleTimeString();}
+    setInterval(updateClock,1000);updateClock();
+  </script>
+</body>
+</html>

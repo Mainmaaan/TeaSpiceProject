@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tea & Spice – Stream</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Tea & <span>Spice Hub</span></div>
+    <div class="menu-toggle">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="stream.html" class="active">Stream</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+    <div class="clock" id="clock"></div>
+  </nav>
+
+  <section class="stream">
+    <h1 class="stream-title">Tea & Spice Video Stream</h1>
+    <p class="stream-subtitle">Watch our recipes, stories & tea-making tips</p>
+    <div class="stream-grid">
+      <div class="stream-card">
+        <video controls>
+          <source src="videos/tea1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3>How to Brew Premium Green Tea</h3>
+      </div>
+      <div class="stream-card">
+        <video controls>
+          <source src="videos/tea2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3>Masala Chai Recipe</h3>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggleBtn.addEventListener('click',()=>navLinks.classList.toggle('show'));
+
+    function updateClock(){const now=new Date();
+    document.getElementById('clock').innerText=now.toLocaleTimeString();}
+    setInterval(updateClock,1000);updateClock();
+  </script>
+</body>
+</html>

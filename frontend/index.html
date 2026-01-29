@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tea & Spice Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Tea & <span>Spice Hub</span></div>
+    <div class="menu-toggle">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="stream.html">Stream</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+    <div class="clock" id="clock"></div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to <span>Tea & Spice Hub</span></h1>
+      <a href="menu.html" class="btn-glow">Order Now 🍵</a>
+    </div>
+  </section>
+
+  <section class="info">
+    <h2>Fresh Brews & Exotic Spices</h2>
+    <p>Discover handcrafted teas and spices from around the world, prepared with passion and tradition.</p>
+  </section>
+  
+
+  <script src="js/clock.js"></script>
+  <script>
+    // hamburger toggle
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggleBtn.addEventListener('click',()=>navLinks.classList.toggle('show'));
+
+    // live clock
+    function updateClock(){const now=new Date();
+    document.getElementById('clock').innerText=now.toLocaleTimeString();}
+    setInterval(updateClock,1000);updateClock();
+  </script>
+</body>
+</html>
